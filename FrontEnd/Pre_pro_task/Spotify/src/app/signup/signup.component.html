@@ -1,0 +1,86 @@
+<div class="background">
+  <h1>Sign In</h1>
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+    <!-- <div class="names"> -->
+
+      <mat-form-field appearance="fill" class="nam"  id="appear">
+      <div class="nam">  <input  matInput placeholder=" Name" type="text" id="firstName" formControlName="name"/></div>
+        <mat-error *ngIf="firstName?.errors?.['required']">
+          First Name is required.
+        </mat-error>
+      </mat-form-field>
+
+    <!-- </div> -->
+    <mat-form-field appearance="fill" class="email" id="appear">
+      <input matInput placeholder="Email" type="email" id="email" formControlName="emailId" />
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['email']">
+        Enter proper email address
+      </mat-error>
+    </mat-form-field>
+
+    <div class="passwords">
+      <mat-form-field appearance="fill" id="appear">
+        <input matInput type="password" placeholder="Password" id="password" formControlName="password">
+        <mat-error *ngIf="password?.errors?.['required']">
+          Password is required.
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.['pattern']">
+          Password should have min 8 letter password, with at least a symbol, upper and lower case letters
+          and a number
+          symbol.
+        </mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="fill" id="appear">
+        <input matInput type="password" placeholder="Confirm Password" id="confirmPassword"
+          formControlName="confirmPassword">
+        <mat-error *ngIf="confirmPassword?.errors?.['required']">
+          Confirm Password is required.
+        </mat-error>
+        <mat-error *ngIf="registrationForm.errors?.['mustMatch']===false">
+          Password and Confirm Password should match.
+        </mat-error>
+
+      </mat-form-field>
+    </div>
+
+    <div class="agedetails">
+      <mat-form-field appearance="fill" id="appear">
+        <input matInput placeholder="Age" type="number" id="age" formControlName="age" />
+        <mat-error *ngIf="age?.errors?.['required']">
+          Age is required
+        </mat-error>
+        <mat-error *ngIf="age?.errors?.['age']">
+          Minimum age required is 13years old
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" id="appear">
+        <input matInput type="text" placeholder="Phone Number" id="phone" formControlName="mobileNo">
+        <mat-error *ngIf="mobileNo?.errors?.['required']">
+          Phone Number is required
+        </mat-error>
+        <mat-error *ngIf="mobileNo?.errors?.['pattern']">
+          Phone number should contains of 10 digits only
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+
+      <mat-form-field appearance="fill" class="street" id="appear">
+        <input matInput type="text" placeholder="Address" id="street" formControlName="address">
+      </mat-form-field>
+    </div>
+    <div class="buttons">
+      <div class="butt"> <button color="green" mat-button mat-raised-button type="reset">Reset</button></div>
+      <div class="butt"> <button color="white" class="submit" mat-button mat-raised-button
+          [disabled]="!registrationForm.valid" type="submit">Submit</button></div>
+    </div>
+
+  </form>
+
+</div>
+<router-outlet></router-outlet>

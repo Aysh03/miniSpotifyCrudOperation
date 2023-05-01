@@ -1,0 +1,42 @@
+{{userDetails|json}}
+<h2>Available Tracks</h2>
+
+<div style="margin-left: 5%">
+  <div *ngFor="let s of allTracks" class="example-card">
+    <div>
+      <mat-card class="card" id="card">
+        <div>
+          <mat-card-header>
+            <mat-card-title style="size: 8px">{{
+              s.trackName | uppercase
+            }}</mat-card-title>
+            <mat-card-subtitle>{{
+              s.artistName | uppercase
+            }}</mat-card-subtitle>
+          </mat-card-header>
+          <!-- <img mat-card-image src="../../assets/images/{{s.trackname}}.jpg" alt="All the tracks"> -->
+
+          <img
+            mat-card-image
+            src="../../assets/images/{{ s.trackName }}.jpg"
+            alt="All the tracks"
+            width="150px"
+            height="110px"/>
+          <mat-card-content>
+            <span>{{ s.desc| uppercase }}</span>
+            <br/>
+            <button class="btn ps-2" (click)="setSong(s)" id="btt">
+              <mat-icon>play_circle_outline</mat-icon> Click to Play
+            </button>
+            <button class="btn ps-2" (click)="addTrackToUserPlay(s)" id="bt">
+              <mat-icon>playlist_add</mat-icon> Add to playList
+            </button>
+            <!-- <br>
+            <span> Click to Play </span> -->
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+

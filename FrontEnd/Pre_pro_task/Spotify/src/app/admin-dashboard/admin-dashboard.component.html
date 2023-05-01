@@ -1,0 +1,61 @@
+<!-- <p>admin-dashboard works!</p> -->
+<h1 class="allign"> Admin Panel</h1>
+
+<form [formGroup]="trackForm" (ngSubmit)="sendTrackData()" class="form" id="tabb">
+  Track ID <input type="text" formControlName="trackId" />
+  <br>
+  Track Name <input type="text" formControlName="trackName" />
+
+  <br>
+  Artist Name <input type="text" formControlName="artistName" />
+  <br>
+  Description <input type="text" formControlName="desc" />
+
+  <input type="submit" value="Add Track" />
+
+</form>
+<br>
+<br>
+
+
+
+<table border="2" class="table table-striped-columns border w-50"  id="tab">
+  <thead style="text-align: center;">
+    <th>Track ID</th> 
+    <th>Track Name</th>
+    <th>Artist Name</th>
+    <th>Description</th>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of allTracks">
+      <td>{{t.trackId}}</td>
+      <td>{{t.trackName}}</td>
+      <td>{{t.artistName}}</td>
+      <td>{{t.desc}}</td>
+      <td>
+        <button (click)="getEditedTrack(t)" class="btn btn-primary p-2">Edit</button> &nbsp;&nbsp;&nbsp;
+        <button (click)="deleteTrack(t.trackId)" class="btn btn-danger p-2">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br> <br>
+
+<h1 class="allign">Track Updation form</h1>
+<form [formGroup]="editedtrackForm " (ngSubmit)="updateTrack()" id="tabb">
+
+  Track Id <input type="text" formControlName="trackId" readonly />
+
+  <br>
+  Track Name <input type="text" formControlName="trackName" />
+
+  <br>
+  Artist Name <input type="text" formControlName="artistName" />
+  <br>
+
+  Description <input type="text" formControlName="desc" />
+  <input type="submit" value="Update Tracks" />
+</form>

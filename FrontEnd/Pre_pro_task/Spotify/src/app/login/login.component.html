@@ -1,0 +1,27 @@
+<div class="container" id="contain">
+  <form [formGroup]="loginn" (ngSubmit)="sendLoginData()" class="form-box" id="frm">
+    <h1>Login</h1>
+      <br>
+      <label>User Name</label>
+      <div>
+    <!-- </div> -->
+    <mat-form-field appearance="fill" class="email" id="appear">
+      <input matInput placeholder="Email" type="email" id="email" formControlName="emailId"  class="input"/>
+    </mat-form-field>
+  </div>
+  <label>Password</label>
+  <div>
+    <mat-form-field appearance="fill" id="appear">
+      <input matInput type="password" placeholder="Password" id="password" formControlName="password" class="input">
+    </mat-form-field>
+
+  </div>
+    <div class="brk">
+      <span>Create New Account &nbsp;&nbsp; </span>
+      <a routerLink="../register">Registration</a>
+    </div>
+    <!-- <br /> -->
+    <button type="submit" class="btn btn-success" id="submit">Login</button>
+  </form>
+</div>
+<router-outlet></router-outlet>

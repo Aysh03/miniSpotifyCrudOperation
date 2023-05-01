@@ -1,0 +1,61 @@
+<!-- <div id="tab" class="table ps-2"> -->
+<h2>Available Tracks</h2>
+
+<!-- <div id="tab">
+    <table border="3" class="tab">
+        <thead>
+            <th>Track Id</th>
+            <th>Track Name</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track of allTracks">
+              <td>{{track.productId}}</td>
+              <td>{{track.trackname}}</td>
+              <td>{{track.desc}}</td>  
+              <td>
+                  <button (click)="addTrackToUserPlaylist(track)">Click to Play</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div> -->
+
+
+
+
+
+
+<div style="margin-left: 5%;">
+  <div *ngFor="let s of allTracks" class="example-card">
+
+    <div>
+      <mat-card class="card" id="card">
+        <div>
+          <mat-card-header>
+            <mat-card-title style="size: 12px;">{{s.trackName|uppercase}}</mat-card-title>
+            <mat-card-subtitle>{{s.artistName|uppercase}}</mat-card-subtitle>
+          </mat-card-header>
+          <!-- <img mat-card-image src="../../assets/images/{{s.trackname}}.jpg" alt="All the tracks"> -->
+
+          <img mat-card-image src="../../assets/images/{{s.trackName}}.jpg" alt="All the tracks" width="150px" height="100px">
+          <mat-card-content>
+
+            <div class="text-center text-capitalize font-italic">{{s.desc}}</div>
+            
+          <button class="btn ps-2" (click)="directToLogin()" id="color">   <mat-icon >play_circle_outline</mat-icon> Click to Play</button>
+            <!-- <br>
+            <span> Click to Play </span> -->
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
+<div>
+<h1 class="marq">
+  <marquee behavior="loop"  direction="left" scrolldelay="1" class="marq">Kindly login to play the song </marquee>
+</h1>
+</div>

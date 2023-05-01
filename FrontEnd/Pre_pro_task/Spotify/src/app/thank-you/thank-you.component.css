@@ -1,0 +1,29 @@
+/* *{
+margin: 0;
+padding: 0;
+}
+ */
+
+marquee {
+  /* /* height: 100vh; */
+  /* background-color: black; */
+  /* background-color: transparent; */
+}
+
+
+h1 {
+  /* text-align: center; */
+  /* background-color: black; */
+  
+  font-weight: bolder;
+
+  font-size: 45px;
+}
+
+#divv {
+  margin-top: 250px;
+  /* margin-left: 20vw; 
+ width: 100vw; 
+  height: 100vh;
+   margin-right: 20vw;  */
+}

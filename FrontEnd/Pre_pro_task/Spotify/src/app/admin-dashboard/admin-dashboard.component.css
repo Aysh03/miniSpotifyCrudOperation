@@ -1,0 +1,36 @@
+#tab{
+  background-color:gold;
+  color: white;
+  width: max-content;
+  margin-left: 30em;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#tabb{
+  margin-left: 30em;
+  margin-bottom: 12 px;
+}
+
+.allign{
+  /* text-decoration:darkgreen; */
+  color: lime;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 20em;
+}
+
+
+th{
+  font-size: 15px;
+}
+
+/* h1.allign{
+  color: lime;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 20em;
+} */
